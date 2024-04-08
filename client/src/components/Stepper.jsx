@@ -1,19 +1,34 @@
 import React from "react";
 import Describe from "./Describe";
-import Intersted from "./Intersted";
-import Rightplace from "./Rightplace";
-import Mathlevel from "./Mathlevel";
+import Interested from "./Interested";
+import RightPlace from "./RightPlace";
+import MathLevel from "./MathLevel";
 import Way from "./Way";
+import LearningPath from "./LearningPath";
+import Final from "./Final";
 
-const Stepper = ({ currentStep, setCurrentStep }) => {
+const Stepper = ({ currentStep, setCurrentStep, handleContinueClick }) => {
+  const handleSubmit = (e) => {};
   return (
-    <div>
-      {currentStep === 1 && <Describe />}
-      {currentStep === 2 && <Intersted />}
-      {currentStep === 3 && <Rightplace />}
-      {currentStep === 4 && <Mathlevel />}
-      {currentStep === 5 && <Way />}
-    </div>
+    <form onSubmit={handleSubmit} className="mx-auto w-full">
+      {currentStep === 1 && (
+        <Describe handleContinueClick={handleContinueClick} />
+      )}
+      {currentStep === 2 && (
+        <Interested handleContinueClick={handleContinueClick} />
+      )}
+      {currentStep === 3 && (
+        <RightPlace handleContinueClick={handleContinueClick} />
+      )}
+      {currentStep === 4 && (
+        <MathLevel handleContinueClick={handleContinueClick} />
+      )}
+      {currentStep === 5 && <Way handleContinueClick={handleContinueClick} />}
+      {currentStep === 6 && (
+        <LearningPath handleContinueClick={handleContinueClick} />
+      )}
+      {currentStep === 7 && <Final />}
+    </form>
   );
 };
 

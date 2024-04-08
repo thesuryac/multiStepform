@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const Bar = ({ width }) => {
+function Bar({ progress }) {
   return (
-    <div className="h-full w-full flex justify-between items-center">
-      <div className="bg-zinc-400 h-2 w-full">
-        <div className={`bg-green-500 h-full w-[${width}%]`}>{width}</div>
-      </div>
+    <div className="bg-gray-200 rounded h-2 w-[90vw]">
+      <div
+        style={{ width: `${progress}%` }}
+        className={`bg-green-500 h-full rounded`}
+      ></div>
     </div>
   );
-};
+}
 
 export default Bar;
