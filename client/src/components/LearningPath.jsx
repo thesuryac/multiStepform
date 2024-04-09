@@ -11,13 +11,16 @@ const LearningPath = ({ handleContinueClick }) => {
           Choose one to get started. You can switch anytime.
         </p>
       </div>
-      <div className="flex justify-around items-center flex-col sm:flex-row sm:h-3/4 h-auto gap-3 sm:gap-24">
+      <div className="flex justify-around items-center flex-col sm:flex-row sm:h-3/4 h-auto gap-3 sm:gap-24 relative">
         <div className="sm:w-1/2 w-[80%]">
           <button
             onClick={handleContinueClick}
-            className="border border-gray-600 w-full sm:w-auto sm:p-10  p-2 rounded-lg flex justify-around items-center"
+            className="border border-gray-600 w-full sm:w-auto sm:p-10 sm:mt-0 mt-20  p-2 rounded-lg flex justify-around items-center"
             type="button"
           >
+            <div className="absolute mb-[180px] z-10 bg-yellow-500 p-3 rounded-full sm:mb-[250px]">
+              <p className="font-normal text-sm">MOST POPULAR</p>
+            </div>
             <div className="">
               <p className="font-bold text-lg">Foundational Math </p>
               <p>
